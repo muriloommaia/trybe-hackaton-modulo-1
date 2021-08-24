@@ -9,7 +9,7 @@ const getUserData = (user) => {
 }
 
 buttonLogin.addEventListener('click', async () => {
-  const user = document.querySelector('.input-login').value;
+  const user = document.querySelector('.input-login').value; // Faz a validação desse dado aqui e depois joga na getUserData
   userData = await getUserData(user);
 });
 
