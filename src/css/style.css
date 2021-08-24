@@ -1,0 +1,29 @@
+body {
+  display: flex;
+}
+
+img {
+  width: 250px;
+}
+
+.container__banner {
+  width: 45%;
+  height: 100vh;
+  background: rgb(25, 117, 83);
+  background: linear-gradient(144deg, rgba(25, 117, 83, 0.9746736676505442) 0%, rgba(140, 214, 187, 1) 100%);
+}
+
+.container__login {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
