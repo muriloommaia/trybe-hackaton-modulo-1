@@ -1,17 +1,15 @@
-const buttonLogin = document.querySelector('.button-login-github');
+async function teste(){
+  console.log(await searchUser('pauloeduardodesordigomes@gmail.com'));
+  console.log(await searchUser('pauloeduardods'));
+}
+//teste();
+const buttonLogin = document.getElementById('button-login-github');
 
 let userData = {};
 
-const getUserData = async (user) => {
-  const fetchGithub = await fetch(`https://api.github.com/users/${user}`);
-  const userObject = await fetchGithub.json();
-  return userObject;
-}
-
 buttonLogin.addEventListener('click', async () => {
-  const user = document.querySelector('.input-login').value; // Faz a validação desse dado aqui e depois joga na getUserData
-  userData = await getUserData(user);
-  console.log(userData);
+  const user = document.getElementById('input-login').value; // Faz a validação desse dado aqui e depois joga na getUserData
+  const userResult = await(searchUser(user));
+  console.log(userResult)
 });
-
 // module.exports = { userData };

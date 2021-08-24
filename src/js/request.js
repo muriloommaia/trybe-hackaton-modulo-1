@@ -1,6 +1,15 @@
-const searchUser = async (name) => {
-  await fetch(`https://api.github.com/users/${name}`)
-  fetch(`https://api.github.com/users/${name}`).then((res) => res.json()).then(createElement)
+const searchUser = (name) => {
+  let endpoint = `users/${name}`;
+  if (/^[a-z0-9.]+@[a-z0-9]+\.[a-z]/g.test(name)) endpoint =`search/users?q=${name}`; // if (email) 
+  return new Promise(async (resolve, reject) => {
+    try {
+      const result = await (await fetch(`https://api.github.com/${endpoint}`)).json();
+      if (result.items && result.total_count) return resolve(result.items[0]); // check if it is email result
+      return resolve(result);
+    } catch (error) {
+      return reject(new Error(error));
+    }
+  });
 }
 `{
     "login": "pauloeduardods",
