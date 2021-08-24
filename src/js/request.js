@@ -1,6 +1,5 @@
 const searchUser = async (name) => {
-  await fetch(`https://api.github.com/users/${name}`)
-  fetch(`https://api.github.com/users/${name}`).then((res) => res.json()).then(createElement)
+  return await (await fetch(`https://api.github.com/users/${name}`)).json()
 }
 `{
     "login": "pauloeduardods",
