@@ -1,5 +1,11 @@
-const searchUser = async (name) => {
-  return await (await fetch(`https://api.github.com/users/${name}`)).json()
+const searchUser = (name) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      return resolve(await (await fetch(`https://api.github.com/users/${name}`)).json());
+    } catch (error) {
+      return reject(new Error(error));
+    }
+  });
 }
 `{
     "login": "pauloeduardods",
