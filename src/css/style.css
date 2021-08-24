@@ -13,6 +13,15 @@ img {
   background: linear-gradient(144deg, rgba(25, 117, 83, 0.9746736676505442) 0%, rgba(140, 214, 187, 1) 100%);
 }
 
+.banner__content {
+  width: 80%;
+  margin-bottom: 7rem;
+}
+
+.subtitle__banner {
+  font-size: 1.5rem;
+}
+
 .container__login {
   width: 55%;
   display: flex;
@@ -26,4 +35,30 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.input-login {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+.button-login-github {
+  width: 100%;
+  height: 40px;
+  background: #4aa573;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-login-github:hover {
+  background: #60C28D;
+  transition: 0.5s;
 }
