@@ -24,14 +24,14 @@
       </section>
       <section class="container__user d-flex">
         <button class="button-user btn btn-outline-dark">Sair</button>
-        <img src="../src/images/user.jpg" class="user__avatar ms-4" alt="User">
+        <img class="profile-photo user__avatar ms-4" alt="User">
       </section>
     </section>
   </header>
   <main class="d-flex justify-content-center">
     <div class="main__container d-flex mt-4">
       <section class="user__information d-flex flex-column align-items-center">
-        <img src="../src/images/user.jpg" class="user__information__avatar mt-4" alt="Avatar do Usuário">
+        <img class="profile-photo user__information__avatar mt-4" alt="Avatar do Usuário">
         <h5 id="name" class="mt-3">Olá Naruto!</h5>
         <hr>
         <section class="container__user__informations">
@@ -42,6 +42,8 @@
       </section>
       <section class="day__information ms-4">
         <section class="container__day__informations__header">
+          <input id="day-message" type="text" placeholder="Mensagem do dia">
+          <input id="day-message-button" type="button" value="Enviar">
         </section>
         <section class="container__day__informations__content mt-3">
         </section>
@@ -80,9 +82,11 @@
   <!-- Font Awesome Script -->
   <script src="https://kit.fontawesome.com/9ad24ce411.js" crossorigin="anonymous"></script>
   <!-- Local script -->
+  <script src="../src/js/messageReader.js"></script>
   <script src="../src/js/request.js"></script>
+  <!-- <script src="../src/js/request.js"></script> -->
   <script src="../src/js/userInformation.js"></script>
-  <script src="../src/js/script.js"></script>
+  <!-- <script src="../src/js/script.js"></script> -->
   <script src="../src/js/todoList.js"></script>
 </body>
 

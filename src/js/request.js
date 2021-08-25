@@ -1,4 +1,5 @@
 const searchUser = (name) => {
+  if (!name) return false;
   let endpoint = `users/${name}`;
   if (/^[a-z0-9.]+@[a-z0-9]+\.[a-z]/g.test(name)) endpoint =`search/users?q=${name}`; // if (email) 
   return new Promise(async (resolve, reject) => {
@@ -11,6 +12,7 @@ const searchUser = (name) => {
     }
   });
 }
+
 `{
     "login": "pauloeduardods",
     "id": 69918154,
