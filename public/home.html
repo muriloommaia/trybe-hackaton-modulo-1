@@ -20,7 +20,7 @@
   <header class="d-flex flex-column align-items-center">
     <section class="header__container d-flex justify-content-center align-items-center">
       <section class="container__logo__trybe container-sm ms-2">
-        <img src="../src/images/logo-trybe.png" class="logo__trybe" alt="Trybe">
+        <a href="https://app.betrybe.com/"><img src="../src/images/logo-trybe.png" class="logo__trybe" alt="Trybe"></a>
       </section>
       <section class="container__user d-flex">
         <button class="button-user btn btn-outline-dark">Sair</button>
@@ -30,8 +30,14 @@
   </header>
   <main class="d-flex justify-content-center">
     <div class="main__container d-flex mt-4">
-      <section class="user__information">
+      <section class="user__information d-flex flex-column align-items-center">
+        <img src="../src/images/user.jpg" class="user__information__avatar mt-4" alt="Avatar do Usuário">
+        <h5 id="name" class="mt-3">Olá Naruto!</h5>
+        <hr>
         <section class="container__user__informations">
+          <a href="#" id="github-url"><i class="fab fa-github"></i>
+            <spam class="username-github">narutokonoha</spam>
+          </a>
         </section>
       </section>
       <section class="day__information ms-4">
@@ -42,6 +48,29 @@
       </section>
       <section class="user__utilities ms-4">
         <section class="user__todo__list">
+          <div class="d-flex flex-column justify-content-center align-items-center m-3">
+            <div class="todo-header">
+              <h1 class="todo__list__title">Sua Lista de Tarefas</h1>
+              <hr>
+            </div>
+            <section class="mt-2">
+              <input type="text" id="texto-tarefa">
+            </section>
+            <div class="d-flex mt-2">
+              <section id="list">
+                <ol id="lista-tarefas"></ol>
+              </section>
+              <section class="buttons d-flex flex-column ms-2">
+                <button class="button btn btn-success" id="criar-tarefa"><i class="fas fa-plus"></i></button>
+                <button class="button btn btn-dark mt-1" id="mover-cima"><i class="fas fa-chevron-up"></i></button>
+                <button class="button btn btn-dark mt-1" id="mover-baixo"><i class="fas fa-chevron-down"></i></button>
+                <button class="button btn btn-dark mt-1" id="apaga-tudo"><i class="fas fa-trash-alt"></i></button>
+                <button class="button btn btn-dark mt-1" id="remover-finalizados"><i
+                    class="fas fa-remove-format"></i></button>
+                <button class="button btn btn-dark mt-1" id="remover-selecionado"><i class="fas fa-eraser"></i></button>
+              </section>
+            </div>
+          </div>
         </section>
         <section class="user__checkbox mt-3">
         </section>
@@ -51,7 +80,10 @@
   <!-- Font Awesome Script -->
   <script src="https://kit.fontawesome.com/9ad24ce411.js" crossorigin="anonymous"></script>
   <!-- Local script -->
+  <script src="../src/js/request.js"></script>
+  <script src="../src/js/userInformation.js"></script>
   <script src="../src/js/script.js"></script>
+  <script src="../src/js/todoList.js"></script>
 </body>
 
 </html>
