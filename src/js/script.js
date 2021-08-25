@@ -13,4 +13,3 @@ buttonLogin.addEventListener('click', async () => {
   const userResult = await(searchUser(user));
   console.log(userResult)
 });
-// module.exports = { userData };
