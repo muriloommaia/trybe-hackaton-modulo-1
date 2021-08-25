@@ -1,0 +1,33 @@
+body {
+  background-color: #F8F8F8;
+}
+
+header {
+  width: 100%;
+  border-bottom: 3px solid #e2e2e2;
+}
+
+.header__container {
+  width: 85%;
+  height: 70px;
+}
+
+.logo__trybe {
+  height: 50px;
+}
+
+.button-user {
+  width: 100px;
+  height: 40px
+}
+
+.user__avatar {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.user__information {
+  background-color: aqua;
+  width: 100%;
+  height: 400px;
+}
