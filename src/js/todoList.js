@@ -7,6 +7,13 @@ function atualizaLista() {
   itemList = document.querySelectorAll('li');
 }
 
+const saveTasks = () => {
+  localStorage.clear();
+  listTarefa = document.getElementById('lista-tarefas');
+  localStorage.setItem('listaSalva', listTarefa.innerHTML);
+};
+
+
 function selectPixel() {
   itemList.forEach((element) => {
     element.addEventListener('click', (event) => {
@@ -17,8 +24,9 @@ function selectPixel() {
         itens.style.backgroundColor = 'white';
         itens.classList.remove('selected');
       });
-      evento.style.backgroundColor = 'rgb(128, 128, 128)';
+      evento.style.backgroundColor = '#e6e6e6';
       evento.classList.add('selected');
+      saveTasks();
     });
   });
 }
@@ -31,12 +39,14 @@ buttonTarefa.addEventListener('click', () => {
   inputTarefa.value = '';
   atualizaLista();
   selectPixel();
+  saveTasks();
 });
 
 // Marcando tarefa como completa
 listTarefa.addEventListener('dblclick', (event) => {
   atualizaLista();
   event.target.classList.toggle('completed');
+  saveTasks();
 });
 
 // Apaga Tudo
@@ -44,6 +54,7 @@ const buttonApaga = document.getElementById('apaga-tudo');
 
 buttonApaga.addEventListener('click', () => {
   listTarefa.innerText = '';
+  saveTasks();
 });
 
 // Remove Finalizados
@@ -55,25 +66,9 @@ removeFinalizados.addEventListener('click', () => {
   completedItens.forEach((element) => {
     element.parentNode.removeChild(element);
   });
+
+  saveTasks();
 });
-
-// Implementação do localStorage no saveTasks e no window.onload (bonus - Tarefa 12 - Feito em parceria com
-// Murilo Maia e Fernando Oliveira e Ivan Zigoni)
-const saveTasks = document.getElementById('salvar-tarefas');
-
-saveTasks.addEventListener('click', () => {
-  localStorage.clear();
-  listTarefa = document.getElementById('lista-tarefas');
-  localStorage.setItem('listaSalva', listTarefa.innerHTML);
-});
-
-window.onload = () => {
-  if (localStorage.listaSalva) {
-    listTarefa.innerHTML = `${localStorage.getItem('listaSalva')}`;
-  }
-};
-
-// Fim do código em conjunto.
 
 // Botões de mover pra cima e pra baixo
 const buttonMoverCima = document.getElementById('mover-cima');
@@ -87,6 +82,8 @@ buttonMoverCima.addEventListener('click', () => {
   if (selected !== null && selected !== li[0]) {
     list.insertBefore(selected, selected.previousSibling);
   }
+
+  saveTasks();
 });
 
 buttonMoverBaixo.addEventListener('click', () => {
@@ -96,6 +93,8 @@ buttonMoverBaixo.addEventListener('click', () => {
   if (selected !== null && selected !== li[li.length - 1]) {
     list.insertBefore(selected, selected.nextSibling.nextSibling);
   }
+
+  saveTasks();
 });
 
 // Botão de remover selecionado
@@ -105,4 +104,12 @@ buttonRemoverSelecionado.addEventListener('click', () => {
   const selected = document.querySelector('.selected');
 
   selected.parentNode.removeChild(selected);
+
+  saveTasks();
 });
+
+window.onload = () => {
+  if (localStorage.listaSalva) {
+    listTarefa.innerHTML = `${localStorage.getItem('listaSalva')}`;
+  }
+};
