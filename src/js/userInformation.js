@@ -10,6 +10,8 @@ const putInformation = ({ avatar_url, login, html_url, name }) => {
   userUrl.href = html_url;
 }
 const getUserInformation = async () => {
-  putInformation(await searchUser(localStorage.user));
+  if (localStorage.user) putInformation(await searchUser(localStorage.user));
+  else window.location.href = '../public/index.html';
+  
 }
 getUserInformation();
