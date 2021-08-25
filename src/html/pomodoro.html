@@ -6,30 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/pomodoroClock.css">
   <title>Pomodoro</title>
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <section id="pomodoro-clock">
-    <div class="display"> tempo atual </div>
+    <h1 class="display"></h1>
     <div class="break-time">
-      <div class="display-break">tempo de pausa</div>
+      <span>Tempo de Pausa</span>
+      <h2 class="display-break"></h2>
         <div class="buttons-break">
-          <button class="up-break"> up </button>
-          <button class="down-break"> down</button>
+          <button class="up-break"><i class="fas fa-chevron-up"></i></button>
+          <button class="down-break"><i class="fas fa-chevron-down"></i></button>
         </div>
     </div>
     <div class="study-time">
-      <div class="display-study">tempo de estudo</div>
+      <span>Tempo de Estudo</span>
+      <h2 class="display-study"></h2>
         <div class="buttons-study">
-          <button class="up-study"> up </button>
-          <button class="down-study"> down </button>
+          <button class="up-study"><i class="fas fa-chevron-up"></i></button>
+          <button class="down-study"> <i class="fas fa-chevron-down"></i> </button>
       </div>
     </div>
-    <dib class="buttons-control">
-      <button class="start-button">play</button>
-      <button class="pause-button">pause</button>
-      <button class="start-button">reset</button>
-    </dib>
+    <div class="buttons-control">
+      <button class="start-stop-button">play</button>
+      <button class="reset-button"><i class="fas fa-sync-alt"></i></button>
+    </div>
   </section>
   <script src="../js/pomodoro.js"></script>
 </body>
