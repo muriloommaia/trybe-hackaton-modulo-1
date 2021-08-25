@@ -1,8 +1,7 @@
 const putInformation = ({ avatar_url, login, html_url, name }) => {
-  let userAvatar = document.querySelector('.user__avatar');
-  userAvatar.src = avatar_url;
-  userAvatar = document.querySelector('.user__information__avatar');
-  userAvatar.src = avatar_url;
+  const userAvatar = document.querySelectorAll('.profile-photo');
+  userAvatar[0].src = avatar_url;
+  userAvatar[1].src = avatar_url;
   const nameInformation = document.querySelector('#name');
   nameInformation.innerText = `Olá ${name}!`;
   const username = document.querySelector('.username-github');
@@ -10,7 +9,7 @@ const putInformation = ({ avatar_url, login, html_url, name }) => {
   const userUrl = document.querySelector('#github-url');
   userUrl.href = html_url;
 }
-
-const userInformation = JSON.parse(localStorage.getItem('user'));
-
-putInformation(userInformation);
+const getUserInformation = async () => {
+  putInformation(await searchUser(localStorage.user));
+}
+getUserInformation();

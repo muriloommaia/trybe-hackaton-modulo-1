@@ -47,11 +47,3 @@ const searchUser = (name) => {
     "created_at": "2020-08-19T17:29:09Z",
     "updated_at": "2021-08-24T13:20:43Z"
 }`
-
-const userName = document.getElementById('user-name-input');
-const userNameButton = document.getElementById('user-name-button');
-userNameButton.addEventListener('click', async () => {
-  //const value = await searchUser(userName.value);
-  window.location.href = `./home.html?username=${userName.value}`;
-  
-})
