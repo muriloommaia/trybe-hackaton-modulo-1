@@ -6,28 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/pomodoroClock.css">
   <title>Pomodoro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
   <section id="pomodoro-clock">
-    <div class="display"></div>
+    <div class="display"> tempo atual </div>
     <div class="break-time">
-      <div class="display-break"></div>
+      <div class="display-break">tempo de pausa</div>
         <div class="buttons-break">
-          <button class="up-break"></button>
-          <button class="down-break"></button>
+          <button class="up-break"> up </button>
+          <button class="down-break"> down</button>
         </div>
     </div>
     <div class="study-time">
-      <div class="display-study"></div>
+      <div class="display-study">tempo de estudo</div>
         <div class="buttons-study">
-          <button class="up-study"></button>
-          <button class="down-study"></button>
+          <button class="up-study"> up </button>
+          <button class="down-study"> down </button>
       </div>
     </div>
     <dib class="buttons-control">
-      <button class="start-button"></button>
-      <button class="pause-button"></button>
-      <button class="start-button"></button>
+      <button class="start-button">play</button>
+      <button class="pause-button">pause</button>
+      <button class="start-button">reset</button>
     </dib>
   </section>
   <script src="../js/pomodoro.js"></script>
