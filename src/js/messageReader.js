@@ -23,12 +23,12 @@ Em recuperação
 :hogwarts: Projeto Trybewarts: 90% dos requisitos obrigatórios até dia 17/08 (terça), às 14h, para não haver mudança de turma.
 Bora que bora, pessoal!
 Quem viu reage com :mufasa:
-@channel`
+@channel
 
 
 
 
-`Bom dia, Tribo A! :trybe_foguete:
+Bom dia, Tribo A! :trybe_foguete:
 Quintou com muita alegria, tribo! :friday:
 Vamos iniciar o bloco 7 com tudo! :trybe_vqvanimado:
 Dia Internacional do Trabalho Doméstico, em prol de condições mais justas!
@@ -59,11 +59,11 @@ Em recuperação
 :bookmark_tabs:  Projeto To Do List: 90% dos requisitos totais até 04/08 (quarta), para não haver mudança de turma.
 Bora que bora, pessoal!
 Quem viu reage com :mario:
-@channel`
+@channel
 
 
 
-`Boa tarde, Tribo A! :trybe_foguete:
+Boa tarde, Tribo A! :trybe_foguete:
 Quartou com projeto, tribo! :coffee-parrot:
 Curiosidade do dia: hoje faz 14 anos que o último livro de Harry Potter foi lançado!  :hogwarts:
 Vamos colocar em prática o conteúdo de hard skills e soft skills. Primeiro projeto em duplas ou trios. Bora viver o mercado de trabalho!! :patrick:
@@ -95,7 +95,7 @@ Quem viu reage com :parrot-muchacho:
 
 
 
-`Boa tarde, Tribo A! :trybe_foguete:
+const message = `Boa tarde, Tribo A! :trybe_foguete:
 Terçou com muita alegria, tribo! :friday:
 Vamos para o quinto dia do bloco com abraços virtuais para os nossos amigos da tribo! :green_heart:
 Dia do amigo! :sunflower:
@@ -128,4 +128,9 @@ Em recuperação
 :bookmark_tabs:  Projeto To Do List: 90% dos requisitos totais até 04/08 (terça), para não haver mudança de turma.
 Bora que bora, pessoal!
 Quem viu reage com :parrot-muchacho:
-@channel`
+@channel
+
+/\d{3}\.?\d{3}\.?\d{3}-?\d{2}/
+/\[0-9]{2}\h[0-9]{2} as [0-9]{2}\h[0-9]{2}/`
+
+const messageReader = (string) => string.match(/[0-9]{2}\h[0-9]{2} às [0-9]{2}\h[0-9]{2} - .{1,200}/g); // regex to day message
