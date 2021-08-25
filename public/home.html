@@ -35,7 +35,9 @@
         <h5 id="name" class="mt-3">Olá Naruto!</h5>
         <hr>
         <section class="container__user__informations">
-          <a href="#" id="github-url"><i class="fab fa-github"></i><spam class="username-github">narutokonoha</spam></a>
+          <a href="#" id="github-url"><i class="fab fa-github"></i>
+            <spam class="username-github">narutokonoha</spam>
+          </a>
         </section>
       </section>
       <section class="day__information ms-4">
@@ -46,29 +48,29 @@
       </section>
       <section class="user__utilities ms-4">
         <section class="user__todo__list">
-          <header>
-            <h1 class="todo__list__title">Minha Lista de Tarefas</h1>
-            <p class="how__to__use__todo__list display-5">Clique duas vezes em um item para marcá-lo como completo</p>
-          </header>
-          <main class="d-flex">
-            <div>
-              <section>
-                <input type="text" id="texto-tarefa">
-              </section>
+          <div class="d-flex flex-column justify-content-center align-items-center m-3">
+            <div class="todo-header">
+              <h1 class="todo__list__title">Sua Lista de Tarefas</h1>
+              <hr>
+            </div>
+            <section class="mt-2">
+              <input type="text" id="texto-tarefa">
+            </section>
+            <div class="d-flex mt-2">
               <section id="list">
                 <ol id="lista-tarefas"></ol>
               </section>
+              <section class="buttons d-flex flex-column ms-2">
+                <button class="button btn btn-success" id="criar-tarefa"><i class="fas fa-plus"></i></button>
+                <button class="button btn btn-dark mt-1" id="mover-cima"><i class="fas fa-chevron-up"></i></button>
+                <button class="button btn btn-dark mt-1" id="mover-baixo"><i class="fas fa-chevron-down"></i></button>
+                <button class="button btn btn-dark mt-1" id="apaga-tudo"><i class="fas fa-trash-alt"></i></button>
+                <button class="button btn btn-dark mt-1" id="remover-finalizados"><i
+                    class="fas fa-remove-format"></i></button>
+                <button class="button btn btn-dark mt-1" id="remover-selecionado"><i class="fas fa-eraser"></i></button>
+              </section>
             </div>
-            <section class="buttons">
-              <button class="btn btn-primary" id="criar-tarefa">Criar Tarefas</button>
-              <button class="btn btn-primary" id="mover-cima">Cima</button>
-              <button class="btn btn-primary" id="mover-baixo">Baixo</button>
-              <button class="btn btn-primary" id="apaga-tudo">Apaga Tudo</button>
-              <button class="btn btn-primary" id="remover-finalizados">Remover Finalizados</button>
-              <button class="btn btn-primary" id="salvar-tarefas">Salvar</button>
-              <button class="btn btn-primary" id="remover-selecionado">Remover Selecionado</button>
-            </section>
-          </main>
+          </div>
         </section>
         <section class="user__checkbox mt-3">
         </section>
