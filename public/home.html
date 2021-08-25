@@ -11,7 +11,7 @@
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
   <!-- local css link -->
-  <link rel="stylesheet" href="./src/css/home.css">
+  <link rel="stylesheet" href="../src/css/home.css">
 
   <title>Document</title>
 </head>
@@ -20,36 +20,38 @@
   <header class="d-flex flex-column align-items-center">
     <section class="header__container d-flex justify-content-center align-items-center">
       <section class="container__logo__trybe container-sm ms-2">
-        <img src="./src/images/logo-trybe.png" class="logo__trybe" alt="Trybe">
+        <img src="../src/images/logo-trybe.png" class="logo__trybe" alt="Trybe">
       </section>
       <section class="container__user d-flex">
         <button class="button-user btn btn-outline-dark">Sair</button>
-        <img src="./src/images/user.jpg" class="user__avatar ms-4" alt="User">
+        <img src="../src/images/user.jpg" class="user__avatar ms-4" alt="User">
       </section>
     </section>
   </header>
-  <main>
-    <section class="user__information">
-      <section class="container__user__informations">
+  <main class="d-flex justify-content-center">
+    <div class="main__container d-flex mt-4">
+      <section class="user__information">
+        <section class="container__user__informations">
+        </section>
       </section>
-    </section>
-    <section class="day__informations">
-      <section class="container__day__informations__header">
+      <section class="day__information ms-4">
+        <section class="container__day__informations__header">
+        </section>
+        <section class="container__day__informations__content mt-3">
+        </section>
       </section>
-      <section class="container__day__informations__content">
+      <section class="user__utilities ms-4">
+        <section class="user__todo__list">
+        </section>
+        <section class="user__checkbox mt-3">
+        </section>
       </section>
-    </section>
-    <section class="user__utilities">
-      <section class="user__todo__list">
-      </section>
-      <section class="user__checkbox">
-      </section>
-    </section>
+    </div>
   </main>
   <!-- Font Awesome Script -->
   <script src="https://kit.fontawesome.com/9ad24ce411.js" crossorigin="anonymous"></script>
   <!-- Local script -->
-  <script src="./src/js/script.js"></script>
+  <script src="../src/js/script.js"></script>
 </body>
 
 </html>

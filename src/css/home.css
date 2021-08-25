@@ -26,8 +26,59 @@ header {
   border-radius: 50%;
 }
 
+.main__container {
+  width: 85%;
+}
+
 .user__information {
-  background-color: aqua;
+  background-color: #fff;
+  border-radius: 5px;
+  border: #e2e2e2 solid 1px;
+  box-shadow: 0px 0px 10px #e2e2e2;
+  width: 20%;
+  height: 500px;
+}
+
+.day__information {
+  width: 55%;
+}
+
+.container__day__informations__header {
   width: 100%;
-  height: 400px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: #e2e2e2 solid 1px;
+  box-shadow: 0px 0px 10px #e2e2e2;
+}
+
+.container__day__informations__content {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: #e2e2e2 solid 1px;
+  box-shadow: 0px 0px 10px #e2e2e2;
+}
+
+.user__utilities {
+  width: 25%;
+}
+
+.user__todo__list {
+  width: 100%;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: #e2e2e2 solid 1px;
+  box-shadow: 0px 0px 10px #e2e2e2;
+}
+
+.user__checkbox {
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: #e2e2e2 solid 1px;
+  box-shadow: 0px 0px 10px #e2e2e2;
 }
