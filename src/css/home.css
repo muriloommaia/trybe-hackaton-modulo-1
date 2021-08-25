@@ -2,6 +2,10 @@ body {
   background-color: #F8F8F8;
 }
 
+h5 {
+  font-size: 1.1rem;
+}
+
 header {
   width: 100%;
   border-bottom: 3px solid #e2e2e2;
@@ -37,6 +41,18 @@ header {
   box-shadow: 0px 0px 10px #e2e2e2;
   width: 20%;
   height: 500px;
+}
+
+.user__information__avatar {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px #e2e2e2;
+}
+
+hr {
+  width: 70%;
+  background-color: black;
+  margin: 0 auto;
 }
 
 .day__information {
