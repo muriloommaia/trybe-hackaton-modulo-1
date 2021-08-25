@@ -1,6 +1,7 @@
 async function teste(){
   console.log(await searchUser('pauloeduardodesordigomes@gmail.com'));
   console.log(await searchUser('pauloeduardods'));
+  console.log(await (await fetch('https://api.github.com/repos/pauloeduardods/trybe-exercises/languages')).json())
 }
 //teste();
 const buttonLogin = document.getElementById('button-login-github');
