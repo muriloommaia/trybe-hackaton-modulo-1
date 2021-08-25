@@ -6,6 +6,11 @@ h5 {
   font-size: 1.1rem;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
 header {
   width: 100%;
   border-bottom: 3px solid #e2e2e2;
@@ -97,4 +102,15 @@ hr {
   border-radius: 5px;
   border: #e2e2e2 solid 1px;
   box-shadow: 0px 0px 10px #e2e2e2;
+}
+
+/* Todo List  */
+
+.todo__list__title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.how__to__use__todo__list {
+  font-size: small;
 }

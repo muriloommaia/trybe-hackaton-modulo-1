@@ -1,14 +1,9 @@
-async function teste(){
-  console.log(await searchUser('pauloeduardodesordigomes@gmail.com'));
-  console.log(await searchUser('pauloeduardods'));
-}
-teste();
-const buttonLogin = document.getElementById('button-login-github');
 
-let userData = {};
+const buttonLogin = document.getElementById('button-login-github');
 
 buttonLogin.addEventListener('click', async () => {
   const user = document.getElementById('input-login').value;
-  console.log('Ai');
-  await initialize(user);
+  localStorage.setItem('user', JSON.stringify(await searchUser(user)));
+  console.log(localStorage.getItem('user'));
+  window.location.href = '../public/home.html';
 });
