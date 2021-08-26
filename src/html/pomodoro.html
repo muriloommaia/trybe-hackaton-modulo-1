@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/pomodoroClock.css">
+</head>
+<body>
+  <section id="pomodoro-clock" class='d-flex flex-column text-center'>
+    <div class="border border-dark p-1 div-display mt-3">
+      <h5 class="this-time">Estudar</h5>
+      <h2 class="display"></h2>
+    </div>
+    <div class="pomodoro-times d-flex justify-content-center">
+      <div class="break-time mx-3">
+        <span>Tempo de Pausa</span>
+        <h2 class="display-break"></h2>
+          <div class="buttons-break">
+            <button class="btn btn-dark up-break"><i class="fas fa-chevron-up"></i></button>
+            <button class="btn btn-dark down-break"><i class="fas fa-chevron-down"></i></button>
+          </div>
+      </div>
+      <div class="study-time mx-3">
+        <span>Tempo de Estudo</span>
+        <h2 class="display-study"></h2>
+          <div class="buttons-study">
+            <button class="btn btn-dark up-study"><i class="fas fa-chevron-up"></i></button>
+            <button class="btn btn-dark down-study"> <i class="fas fa-chevron-down"></i> </button>
+        </div>
+      </div>
+    </div>
+    <div class="buttons-control m-2">
+      <button class="btn btn-success start-stop-button"></button>
+      <button class="btn btn-success reset-button"><i class="fas fa-sync-alt"></i></button>
+    </div>
+    <audio id="alarme" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"> </audio>  </section>
+  <script src="../js/pomodoro.js"></script>
+</body>
+</html>
