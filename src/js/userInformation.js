@@ -20,6 +20,6 @@ getUserInformation();
 const exit = document.querySelector('.button-exit');
 
 exit.addEventListener('click', () => {
-  localStorage.clear();
+  localStorage.removeItem('user');
   window.location.href = '../public/index.html';
 });

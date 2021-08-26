@@ -2,10 +2,6 @@ body {
   background-color: #F8F8F8;
 }
 
-h5 {
-  font-size: 1.1rem;
-}
-
 a {
   color: #000;
   text-decoration: none;
@@ -18,20 +14,19 @@ header {
 
 .header__container {
   width: 85%;
-  height: 70px;
+  height: 6%;
 }
 
 .logo__trybe {
-  height: 50px;
+  width: 7%;
 }
 
 .button-exit {
   width: 100px;
-  height: 40px
 }
 
 .user__avatar {
-  width: 50px;
+  width: 40px;
   border-radius: 50%;
 }
 
@@ -97,14 +92,6 @@ li {
 .todo-header hr {
   width: 100%;
   margin: 0 auto;
-}
-.todo__list__title {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.how__to__use__todo__list {
-  font-size: small;
 }
 
 #texto-tarefa {

@@ -8,7 +8,7 @@ function atualizaLista() {
 }
 
 const saveTasks = () => {
-  localStorage.clear();
+  localStorage.removeItem('listaSalva');
   listTarefa = document.getElementById('lista-tarefas');
   localStorage.setItem('listaSalva', listTarefa.innerHTML);
 };
@@ -108,8 +108,8 @@ buttonRemoverSelecionado.addEventListener('click', () => {
   saveTasks();
 });
 
-window.onload = () => {
+const iniciaLista = () => {
   if (localStorage.listaSalva) {
     listTarefa.innerHTML = `${localStorage.getItem('listaSalva')}`;
   }
-};
+}

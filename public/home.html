@@ -21,7 +21,7 @@
 
 <body>
   <header class="d-flex flex-column align-items-center">
-    <section class="header__container d-flex justify-content-center align-items-center">
+    <section class="header__container m-1 d-flex justify-content-center align-items-center">
       <section class="container__logo__trybe container-sm ms-2">
         <a href="https://app.betrybe.com/"><img src="../src/images/logo-trybe.png" class="logo__trybe" alt="Trybe"></a>
       </section>
@@ -68,7 +68,7 @@
         <section class="user__todo__list tryber__container">
           <div class="d-flex flex-column justify-content-center align-items-center m-3">
             <div class="todo-header">
-              <h1 class="todo__list__title">Sua Lista de Tarefas</h1>
+              <h5>Sua Lista de Tarefas</h5>
               <hr>
             </div>
             <section class="mt-2">
@@ -91,8 +91,11 @@
           </div>
         </section>
         <section class="user__pomodoro mt-3 tryber__container">
-          <section id="pomodoro-clock" class='d-flex flex-column text-center mb-2'>
-            <div class="border border-dark p-1 div-display mt-3">
+          <div class="m-3 mb-0">
+            <h5 class="mt-1">Pomodoro</h5>
+          <hr>
+          <section id="pomodoro-clock" class='d-flex flex-column text-center m-1'>
+            <div class="div-display rounded-circle">
               <h6 class="this-time">Estudar</h6>
               <h3 class="display"></h3>
             </div>
@@ -122,6 +125,7 @@
               src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav">
             </audio>
           </section>
+          </div>
         </section>
       </section>
     </div>
