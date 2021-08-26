@@ -8,12 +8,15 @@ const messageReader = (string) => {
 } 
 
 const createCheckbox = (text, time) => {
-	const newCheckbox = document.createElement('div');
+	const newCheckbox = document.createElement('label');
+	const checkbox = document.createElement('input');
 	const newSpanTime = document.createElement('span');
 	const checkboxInput = document.createElement('span');
 	newSpanTime.style.display = 'none';
 	newSpanTime.innerText = time;
+	checkbox.type = 'checkbox';
 	checkboxInput.innerText = text;
+	newCheckbox.appendChild(checkbox);
 	newCheckbox.appendChild(newSpanTime);
 	newCheckbox.appendChild(checkboxInput);
 	return newCheckbox;
