@@ -25,30 +25,39 @@
       <section class="container__logo__trybe container-sm ms-2">
         <a href="https://app.betrybe.com/"><img src="../src/images/logo-trybe.png" class="logo__trybe" alt="Trybe"></a>
       </section>
-      <section class="container__user d-flex">
-        <button class="button-user btn btn-outline-dark">Sair</button>
+      <section class="container__user d-flex justify-content-center align-items-center">
+        <button class="button-exit btn btn-outline-dark">Sair</button>
         <img class="profile-photo user__avatar ms-4" alt="User">
       </section>
     </section>
   </header>
   <main class="d-flex justify-content-center">
     <div class="main__container d-flex mt-4">
-      <section class="user__information d-flex flex-column align-items-center">
-        <img class="profile-photo user__information__avatar mt-4" alt="Avatar do Usuário">
-        <h5 id="name" class="mt-3"></h5>
-        <hr>
-        <section class="container__user__informations">
-          <a href="#" id="github-url"><i class="fab fa-github"></i>
-            <spam class="username-github"></spam>
-          </a>
-        </section>
+      <section class="user__information tryber__container">
+        <div class="d-flex flex-column align-items-center m-3">
+          <img class="profile-photo user__information__avatar mt-3" alt="Avatar do Usuário">
+          <h5 id="name" class="text-center mt-3"></h5>
+          <hr>
+          <section class="container__user__informations">
+            <a href="#" id="github-url"><i class="fab fa-github"></i>
+              <spam class="username-github"></spam>
+            </a>
+          </section>
+        </div>
       </section>
       <section class="day__information ms-4">
-        <section class="container__day__informations__header">
-          <textarea id="day-message" placeholder="Mensagem do dia"></textarea>
-          <input id="day-message-button" type="button" value="Enviar">
+        <section class="container__day__informations__header tryber__container">
+          <div class="m-3">
+            <h3 class="day__information__title">Informações do dia</h3>
+            <hr class="">
+            <p>Insira a mensagem do dia aqui</p>
+            <div class="d-flex">
+              <textarea id="day-message" placeholder="Mensagem do dia"></textarea>
+              <button id="day-message-button" class="btn btn-dark"><i class="fas fa-arrow-down"></i></button>
+            </div>
+          </div>
         </section>
-        <section class="container__day__informations__content mt-3">
+        <section class="container__day__informations__content tryber__container mt-3">
           <section id="day-message-result">
           </section>
           <section id="day-alarm-section">
@@ -56,7 +65,7 @@
         </section>
       </section>
       <section class="user__utilities ms-4">
-        <section class="user__todo__list">
+        <section class="user__todo__list tryber__container">
           <div class="d-flex flex-column justify-content-center align-items-center m-3">
             <div class="todo-header">
               <h1 class="todo__list__title">Sua Lista de Tarefas</h1>
@@ -81,7 +90,7 @@
             </div>
           </div>
         </section>
-        <section class="user__checkbox mt-3">
+        <section class="user__pomodoro mt-3 tryber__container">
           <section id="pomodoro-clock" class='d-flex flex-column text-center mb-2'>
             <div class="border border-dark p-1 div-display mt-3">
               <h6 class="this-time">Estudar</h6>
