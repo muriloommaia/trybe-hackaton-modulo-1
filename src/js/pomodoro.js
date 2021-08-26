@@ -48,7 +48,7 @@ const innerTextDisplay = (parent, time) => {
 // função usada para quando um botão de mudança de tempo for clicado
 const mudancaTempo = (mudanca, type) => {
   if (type === 'break') {
-    if(timerOn) return ;
+    if (timerOn) return;
 
     // Aqui é definido que o tempo maximo para descanso é 20 minutos
     if (mudanca > 0 && displayBreak < 20 * 60) {
@@ -60,7 +60,7 @@ const mudancaTempo = (mudanca, type) => {
     }
     innerTextDisplay(tagDisplayBreak, displayBreak);
   } else {
-    if(timerOn) return ;
+    if (timerOn) return;
     // Aqui é definido que o tempo maximo para estudo é 60 minutos
     if (mudanca > 0 && displayStudy < 60 * 60) {
       displayStudy += mudanca;
@@ -157,7 +157,7 @@ divDisplay.addEventListener('mouseleave', (event) => {
 
 const resetTempo = () => {
   clearInterval(localStorage.getItem('interval-id'));
-  [displayTime, displayBreak, displayStudy] = [20 * 60, 5 * 60,  20 * 60];
+  [displayTime, displayBreak, displayStudy] = [20 * 60, 5 * 60, 20 * 60];
   iniciaRelogio();
   timerOn = false;
   iconPause();
