@@ -42,6 +42,13 @@ buttonTarefa.addEventListener('click', () => {
   saveTasks();
 });
 
+// Ao clicar em enter o botão tarefa é acionado
+document.addEventListener("keypress", (event) => {
+  if(event.key === 'Enter') {
+    buttonTarefa.click();
+  }
+});
+
 // Marcando tarefa como completa
 listTarefa.addEventListener('dblclick', (event) => {
   atualizaLista();
