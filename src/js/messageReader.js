@@ -23,8 +23,11 @@ const createCheckbox = (text, time) => {
 }
 
 const displayMessageResult = (result) => {
+	if (result.length === 0) return;
 	result.forEach((cur) => {
-		document.getElementById('day-message-result').appendChild(createCheckbox(cur, '10h20 as 20h21'));
+		const time = cur.match(/[0-9]{2}\h[0-9]{2}[^\\\r\n]{1,8}[0-9]{2}\h{1}[0-9]{2}/g)[0]; // get time
+		const content = cur.split(time)[1].match(/[^\-]/g).join('').trim(); //get content
+		document.getElementById('day-message-result').appendChild(createCheckbox(content, time));
 	})
 }
 
