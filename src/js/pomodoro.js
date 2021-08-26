@@ -146,6 +146,13 @@ divDisplay.addEventListener('click', () => {
     iniciaRelogio();
     mudancaTurno();
   }
+  divDisplay.classList.remove('hover-study', 'hover-break')
+});
+divDisplay.addEventListener('mouseenter', (event) => {
+  !onBreak ? divDisplay.classList.add('hover-study') : divDisplay.classList.add('hover-break')
+});
+divDisplay.addEventListener('mouseleave', (event) => {
+  !onBreak ? divDisplay.classList.remove('hover-study') : divDisplay.classList.remove('hover-break')
 });
 
 const resetTempo = () => {
