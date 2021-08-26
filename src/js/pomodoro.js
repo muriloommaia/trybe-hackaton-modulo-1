@@ -160,14 +160,14 @@ window.onload = () => {
   iniciaRelogio();
 }
 
-module.exports = {
-  displayBreak,
-  displayStudy,
-  displayTime,
-  timerOn,
-  onBreak,
-  formatTime,
-  mudancaTempo,
-  controlTime,
-  resetTempo,
-}
+// module.exports = {
+//   displayBreak,
+//   displayStudy,
+//   displayTime,
+//   timerOn,
+//   onBreak,
+//   formatTime,
+//   mudancaTempo,
+//   controlTime,
+//   resetTempo,
+// }

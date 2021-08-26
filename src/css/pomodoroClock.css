@@ -3,8 +3,11 @@
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
+  /* border-radius: 5%; */
+  /* width: 125px;
+  height: 125px; */
   border-radius: 50%;
   border-width: 2px !important; 
   transition: 1s;
@@ -14,4 +17,8 @@
   background: rgb(40,167,69);
   background: linear-gradient(144deg, rgba(40,167,69,1) 0%, rgba(218,255,226,0.8679320946168364) 100%);
   cursor: pointer;
+}
+
+.btn-success {
+  align-self: center;
 }
