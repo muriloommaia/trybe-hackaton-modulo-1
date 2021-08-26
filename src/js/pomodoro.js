@@ -159,3 +159,15 @@ buttonReset.addEventListener('click', resetTempo);
 window.onload = () => {
   iniciaRelogio();
 }
+
+module.exports = {
+  displayBreak,
+  displayStudy,
+  displayTime,
+  timerOn,
+  onBreak,
+  formatTime,
+  mudancaTempo,
+  controlTime,
+  resetTempo,
+}

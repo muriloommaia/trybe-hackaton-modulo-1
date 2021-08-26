@@ -1,0 +1,23 @@
+{
+  "name": "trybe-hackaton-modulo-1",
+  "version": "1.0.0",
+  "description": "- [ ] Input com id = 'github-input'  - [ ] Criar botão id 'botao-login' que recebe o github-input e faz request com a API do gitHub e envia para uma nova página  - [ ] A tela deve ter o logo da Trybe, e uma frase motivacional do seu gosto.  - [ ] Tela dividida em 60/40 para tela de login e frase motivacional, respectivamente  - [ ] Criação de testes pra tudo",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muriloommaia/trybe-hackaton-modulo-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muriloommaia/trybe-hackaton-modulo-1/issues"
+  },
+  "homepage": "https://github.com/muriloommaia/trybe-hackaton-modulo-1#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
