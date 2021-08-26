@@ -16,3 +16,10 @@ const getUserInformation = async () => {
 }
 
 getUserInformation();
+
+const exit = document.querySelector('.button-exit');
+
+exit.addEventListener('click', () => {
+  localStorage.clear();
+  window.location.href = '../public/index.html';
+});
