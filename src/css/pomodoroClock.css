@@ -1,0 +1,17 @@
+.div-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border-width: 2px !important; 
+  transition: 1s;
+}
+
+.div-display:hover {
+  background: rgb(40,167,69);
+  background: linear-gradient(144deg, rgba(40,167,69,1) 0%, rgba(218,255,226,0.8679320946168364) 100%);
+  cursor: pointer;
+}
