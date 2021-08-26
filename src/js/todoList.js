@@ -69,11 +69,9 @@ const removeFinalizados = document.getElementById('remover-finalizados');
 
 removeFinalizados.addEventListener('click', () => {
   const completedItens = document.querySelectorAll('.completed');
-
   completedItens.forEach((element) => {
     element.parentNode.removeChild(element);
   });
-
   saveTasks();
 });
 
@@ -85,11 +83,9 @@ buttonMoverCima.addEventListener('click', () => {
   const selected = document.querySelector('.selected');
   const list = document.querySelector('ol');
   const li = document.querySelectorAll('li');
-
   if (selected !== null && selected !== li[0]) {
     list.insertBefore(selected, selected.previousSibling);
   }
-
   saveTasks();
 });
 
@@ -100,7 +96,6 @@ buttonMoverBaixo.addEventListener('click', () => {
   if (selected !== null && selected !== li[li.length - 1]) {
     list.insertBefore(selected, selected.nextSibling.nextSibling);
   }
-
   saveTasks();
 });
 
@@ -109,9 +104,7 @@ const buttonRemoverSelecionado = document.querySelector('#remover-selecionado');
 
 buttonRemoverSelecionado.addEventListener('click', () => {
   const selected = document.querySelector('.selected');
-
   selected.parentNode.removeChild(selected);
-
   saveTasks();
 });
 
