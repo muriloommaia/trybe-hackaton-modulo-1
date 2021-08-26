@@ -25,10 +25,11 @@ const createCheckbox = (text, time) => {
 const displayMessageResult = (result) => {
 	if (result.length === 0) return;
 	result.forEach((cur) => {
+		const optional = cur.match(/\[\*\]/) ? true : false;
 		const time = cur.match(/[0-9]{2}\h[0-9]{2}[^\\\r\n]{1,8}[0-9]{2}\h{1}[0-9]{2}/g)[0]; // get time
-		const content = cur.split(time)[1].match(/[^\-]/g).join('').trim(); //get content
+		const content = (optional ? 'Opcional* - ' : '') + cur.split(time)[1].match(/[^\-]/g).join('').trim() //get content
 		document.getElementById('day-message-result').appendChild(createCheckbox(content, time));
-	})
+	});
 }
 
 
