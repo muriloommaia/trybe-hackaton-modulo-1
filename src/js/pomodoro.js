@@ -168,16 +168,5 @@ const resetTempo = () => {
   iconPause();
   timerAtual.innerText = 'Estudar'
 }
-buttonReset.addEventListener('click', resetTempo);
 
-// module.exports = {
-//   displayBreak,
-//   displayStudy,
-//   displayTime,
-//   timerOn,
-//   onBreak,
-//   formatTime,
-//   mudancaTempo,
-//   controlTime,
-//   resetTempo,
-// }
+buttonReset.addEventListener('click', resetTempo);
