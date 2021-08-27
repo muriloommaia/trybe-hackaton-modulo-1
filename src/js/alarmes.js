@@ -4,7 +4,17 @@ const buttonSave = document.getElementById('save-agenda');
 const buttonDelete = document.getElementById('delete-agenda');
 // Array de horarios para despertar, é iniciado com zero, setado novamente em functionAlarms, mas no carregamento da pagina, caso houver localStorage.horarios, ele recebe o valor antigo;
 let horarios = [];
+const verificaParaCheck = () => {
+  const allCheckeds = document.querySelectorAll('input.agenda');
+  // console.log('teste', horarios, allCheckeds)
+  allCheckeds.forEach((e) => {
+    // console.log(e.parentElement.lastChild)
+    if(horarios.includes(e.parentElement.lastChild.innerText.slice(0,5).replace('h',':'))) {
+      e.checked = true;
+    }
+  })
 
+}
 // Função feita para retornar o horario atual no formato hh:mm
 const getTimeActual = () => {
   const data = new Date();
@@ -56,6 +66,7 @@ const functionAlarm = (event) => {
       e.checked;
       const hora = e.nextSibling.innerText.split(' ');
       horarios = horarios.concat(hora[0].replace('h', ':'))
+      // console.log(horarios)
     })
   }
   sectionAlarmes.innerHTML = '';
@@ -100,6 +111,7 @@ window.onload = () => {
     horarios = sectionAlarmes.innerHTML.match(/[\d]{2}:[\d]{2}/g);
     removeIntervals(horarios);
     makeAlarms(horarios);
+    verificaParaCheck();
   }
   iniciaRelogio();
   iniciaLista();
