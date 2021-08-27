@@ -31,7 +31,7 @@ const searchInfo = (url) => {
   });
 }
 
-const languageUsed = (languages, total, language) => {
+const languageUsedPercentage = (languages, total, language) => {
   const result = Object.keys(languages).reduce((acc, currentLanguage) => ([
     ...acc,
     { [currentLanguage]: (languages[currentLanguage] / total * 100).toFixed(2) }]), []);
@@ -39,7 +39,6 @@ const languageUsed = (languages, total, language) => {
     return result[result.indexOf(language)];
   }
   return result.sort((a, b) => Object.values(b)[0] - Object.values(a)[0]);
-
 }
 
 const displayUserInformation = ({ avatar_url, name, login, html_url, following, followers, languagesUsed, languagesUsedTotal }) => {
@@ -56,7 +55,11 @@ const displayUserInformation = ({ avatar_url, name, login, html_url, following, 
   const userUrl = document.querySelector('#github-url');
   userUrl.href = html_url;
   const languageContainer = document.getElementById('programming-language');
-  console.log(languageUsed(languagesUsed, languagesUsedTotal)) //show top3 
+  languageUsedPercentage(languagesUsed, languagesUsedTotal).slice(0, 3).forEach((cur) => {
+    const newElement = document.createElement('p');
+    newElement.innerText = `${Object.entries(cur).join('').replace(',', ':  ')}%`
+    languageContainer.appendChild(newElement)
+  });
 }
 
 const getUserInfo = async () => {
