@@ -49,9 +49,9 @@ const displayUserInformation = ({ avatar_url, name, login, html_url, following, 
 const getUserInfo = async () => {
   const userName = localStorage.user;
   if (!userName) window.location.href = '../public/index.html';
-  const result = await searchUser(userName);
-  const followers = await searchInfo(result.followers_url); // get followers count
-  const repos = await searchInfo(result.repos_url); // get repos
+  const { followers_url, repos_url, avatar_url, name, login, html_url, following } = await searchUser(userName);
+  const followers = await searchInfo(followers_url); // get followers count
+  const repos = await searchInfo(repos_url); // get repos
   const reposInfo = await Promise.all(repos.map(async ({ name, description, languages_url, language, fork}) => {
     const languages = await searchInfo(languages_url);
     return { name, description, language, languages, fork };
@@ -64,8 +64,8 @@ const getUserInfo = async () => {
     });
     return acc;
   }, {});
-  console.log({ ...result, followers, repos, languagesUsed, reposInfo })
-  displayUserInformation({ ...result, followers, repos, languagesUsed, reposInfo });
+  const languagesUsedTotal = Object.keys(languagesUsed).reduce((acc, cur) => acc + parseInt(languagesUsed[cur], 10), 0) //sum
+  displayUserInformation({ avatar_url, name, login, html_url, following, followers, languagesUsed, reposInfo, languagesUsedTotal });
 }
 getUserInfo();
 `{
