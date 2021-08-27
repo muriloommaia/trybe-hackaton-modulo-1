@@ -31,7 +31,7 @@ const searchInfo = (url) => {
   });
 }
 
-const displayUserInformation = ({ avatar_url, name, login, html_url, following, followers }) => {
+const displayUserInformation = ({ avatar_url, name, login, html_url, following, followers, languagesUsed, languagesUsedTotal }) => {
   const userAvatar = document.querySelectorAll('.profile-photo');
   userAvatar.forEach((user) => user.src = avatar_url);
   const nameInformation = document.querySelector('#name');
@@ -44,6 +44,8 @@ const displayUserInformation = ({ avatar_url, name, login, html_url, following, 
   userfloowers.innerHTML = followers.length;
   const userUrl = document.querySelector('#github-url');
   userUrl.href = html_url;
+  const languageContainer = document.getElementById('programming-language');
+  console.log(Object.entries(languagesUsed).sort(([f,a], [g,b]) => a - b)); //show top3 
 }
 
 const getUserInfo = async () => {
