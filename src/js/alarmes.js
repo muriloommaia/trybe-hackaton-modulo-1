@@ -39,6 +39,7 @@ const boxAlarmConstructor = (id) => {
   const div = document.createElement('div');
   div.className = 'box-horario'
   // div.id = id;
+  // div.className = 'box-horario'
   div.innerText = id;
   return div;
 }

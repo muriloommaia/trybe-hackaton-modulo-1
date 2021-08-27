@@ -49,7 +49,9 @@ const innerTextDisplay = (parent, time) => {
 const mudancaTempo = (mudanca, type) => {
   if (type === 'break') {
     if (timerOn) return;
-
+    if (onBreak && displayBreak > 1 * 60 && displayBreak < 20 * 60) {
+      displayTime += mudanca;
+    }
     // Aqui é definido que o tempo maximo para descanso é 20 minutos
     if (mudanca > 0 && displayBreak < 20 * 60) {
       displayBreak += mudanca;
@@ -59,6 +61,8 @@ const mudancaTempo = (mudanca, type) => {
       displayBreak += mudanca;
     }
     innerTextDisplay(tagDisplayBreak, displayBreak);
+    innerTextDisplay(tagDisplayAtual, displayTime);
+
   } else {
     if (timerOn) return;
     // Aqui é definido que o tempo maximo para estudo é 60 minutos
@@ -118,7 +122,7 @@ const controlTime = () => {
   // Se a chamada acontecer quando o intervalo estiver acontecendo, ira para-lo
   if (timerOn) {
     // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval#examples
-    clearInterval(localStorage.getItem("interval-id"))
+    clearInterval(localStorage.getItem("interval-id"));
   }
   // se estiver ativo, ira desativar, e vice-versa
   timerOn = !timerOn;
@@ -158,9 +162,11 @@ divDisplay.addEventListener('mouseleave', (event) => {
 const resetTempo = () => {
   clearInterval(localStorage.getItem('interval-id'));
   [displayTime, displayBreak, displayStudy] = [20 * 60, 5 * 60, 20 * 60];
-  iniciaRelogio();
   timerOn = false;
+  onBreak = false;
+  iniciaRelogio();
   iconPause();
+  timerAtual.innerText = 'Estudar'
 }
 buttonReset.addEventListener('click', resetTempo);
 
