@@ -5,10 +5,6 @@ exit.addEventListener('click', () => {
   window.location.href = '../public/index.html';
 });
 
-const getRepository = (result) => {
-
-}
-
 const searchUser = (name) => {
   if (!name) return false;
   let endpoint = `users/${name}`;
@@ -24,7 +20,18 @@ const searchUser = (name) => {
   });
 }
 
-const putInformation = ({ avatar_url, login, html_url, name }) => {
+const searchInfo = (url) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const result = await (await fetch(url)).json();
+      return resolve(result);
+    } catch (error) {
+      return reject(new Error(error));
+    }
+  });
+}
+
+const displayUserInformation = ({ avatar_url, login, html_url, name }) => {
   const userAvatar = document.querySelectorAll('.profile-photo');
   userAvatar[0].src = avatar_url;
   userAvatar[1].src = avatar_url;
@@ -36,15 +43,19 @@ const putInformation = ({ avatar_url, login, html_url, name }) => {
   userUrl.href = html_url;
 }
 
-const userInformation = async () => {
+const getUserInfo = async () => {
   const userName = localStorage.user;
   if (!userName) window.location.href = '../public/index.html';
   const result = await searchUser(userName);
-  putInformation(result);
-  return result;
+  const followers = await searchInfo(result.followers_url); // get followers count
+  const repo = await searchInfo(result.repos_url); // get repos
+  const repoLanguages = await Promise.all(repo.map(async ({ name, description, languages_url, language}) => {
+    const languages = await searchInfo(languages_url);
+    return { name, description, language, languages };
+  })); //get repo languages
+  displayUserInformation(result);
 }
-userInformation();
-
+getUserInfo();
 `{
     "login": "pauloeduardods",
     "id": 69918154,
