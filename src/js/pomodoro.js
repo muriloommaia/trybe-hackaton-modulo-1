@@ -111,7 +111,7 @@ const controlTime = () => {
         return innerTextDisplay(tagDisplayAtual, displayTime);
       }
     }, 1000);
-    localStorage.clear();
+    localStorage.removeItem('interval-id');
     // Cria um idIntervalo no localStorage, usado para interromper o intervalo depois
     localStorage.setItem("interval-id", idIntervalo)
   }

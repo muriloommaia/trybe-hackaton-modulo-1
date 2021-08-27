@@ -15,6 +15,7 @@ const createCheckbox = (text, time) => {
 	newSpanTime.style.display = 'none';
 	newSpanTime.innerText = time;
 	checkbox.type = 'checkbox';
+	checkbox.className = 'agenda'
 	checkboxInput.innerText = text;
 	newCheckbox.appendChild(checkbox);
 	newCheckbox.appendChild(newSpanTime);
@@ -35,6 +36,7 @@ const displayMessageResult = (result) => {
 const sendMessageButton = document.getElementById('day-message-button');
 
 sendMessageButton.addEventListener('click', () => {
+	sectionAgenda.innerHTML = '';
 	const message = document.getElementById('day-message').value;
 	displayMessageResult(messageReader(message));
 });

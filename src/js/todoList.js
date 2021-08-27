@@ -8,7 +8,10 @@ function atualizaLista() {
 }
 
 const saveTasks = () => {
-  localStorage.removeItem('listaSalva');
+//<<<<<<< fernando-nascimento-oliveira
+  //localStorage.removeItem('listaSalva');
+//=======
+//>>>>>>> main
   listTarefa = document.getElementById('lista-tarefas');
   localStorage.setItem('listaSalva', listTarefa.innerHTML);
 };
