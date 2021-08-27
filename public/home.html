@@ -37,19 +37,19 @@
     <div class="row">
       <section class="col-sm-12 col-lg-3 user-container my-3">
         <!-- user__information tryber__container -->
-        <div class="align-items-center">
+        <div class="d-flex flex-column align-items-center">
           <img class="profile-photo user__information__avatar mt-3" alt="Avatar do Usuário">
           <h5 id="name" class="text-center mt-3"></h5>
-          <hr>
+          <hr class="my-2">
           <section class="container__user__informations">
-            <a href="#" id="github-url"><i class="fab fa-github"></i>
+            <a href="#" class="d-block text-center mb-3" id="github-url"><i class="fab fa-github"></i>
               <spam class="username-github"></spam>
             </a>
-            <p>Seguidores: <span id="followers"></span> Seguindo: <span id="following"></span></p>
-            <p>Top3 Linguagens de programacao:</p>
+            <p class="ms-3 my-1">Seguindo: <span id="following"></span></p>
+            <p class="ms-3 mb-3">Seguidores: <span id="followers"></span></p>
+            <p>Linguagens mais usadas</p>
             <div id="programming-language"></div>
           </section>
-
 
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -91,8 +91,6 @@
           </div>
         </div>
       </section>
-
-
       <section class="col-sm-12 col-lg-6 my-3">
         <section class="user-container">
           <div class="m-3">
@@ -143,7 +141,7 @@
             </div>
           </div>
         </section>
-        <section class="user__pomodoro mt-3 tryber__container">
+        <section class="user__pomodoro mt-3 user-container">
           <div class="m-3 mb-0">
             <h5 class="mt-1">Pomodoro</h5>
           <hr>
