@@ -34,7 +34,7 @@ header {
   width: 85%;
 } */
 
-.user-container {
+.user-container, .tryber__container {
   background-color: #fff;
   border-radius: 5px;
   border: #e2e2e2 solid 1px;
@@ -65,6 +65,10 @@ hr {
   width: 100%;
   background-color: black;
   margin: 0 auto;
+}
+
+.agenda {
+  margin-right: 6px;
 }
 /* 
 .day__information {

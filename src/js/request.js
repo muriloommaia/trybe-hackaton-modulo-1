@@ -57,6 +57,7 @@ const displayUserInformation = ({ avatar_url, name, login, html_url, following, 
   const languageContainer = document.getElementById('programming-language');
   languageUsedPercentage(languagesUsed, languagesUsedTotal).slice(0, 3).forEach((cur) => {
     const newElement = document.createElement('p');
+    newElement.className = 'my-1';
     newElement.innerText = `${Object.entries(cur).join('').replace(',', ':  ')}%`
     languageContainer.appendChild(newElement)
   });
