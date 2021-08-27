@@ -18,7 +18,7 @@ const createCheckbox = (text, time) => {
 	newSpanTime.innerText = time;
 	checkbox.type = 'checkbox';
 	checkbox.className = 'agenda';
-	checkboxInput.innerText = `${newSpanTime.innerText.slice(0,5)} ${text}`;
+	checkboxInput.innerText = `${newSpanTime.innerText.slice(0, 5)} ${text}`;
 	newDiv.appendChild(newCheckbox);
 	newCheckbox.appendChild(checkbox);
 	newCheckbox.appendChild(newSpanTime);

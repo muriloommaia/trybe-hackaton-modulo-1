@@ -16,6 +16,8 @@
   <!-- Pomodoro css -->
   <link rel="stylesheet" href="../src/css/pomodoroClock.css">
 
+  <link rel="stylesheet" href="../src/css/notes.css">
+
   <title>Document</title>
 </head>
 
@@ -33,20 +35,61 @@
   </header>
   <main class="container">
     <div class="row">
-      <section class="col-sm-12 col-lg-3 user-container my-3">
+      <section class="col-sm-12 col-lg-3 my-3">
         <!-- user__information tryber__container -->
-        <div class="align-items-center">
+        <div class="d-flex flex-column align-items-center user-container py-4">
           <img class="profile-photo user__information__avatar mt-3" alt="Avatar do Usuário">
-          <h5 id="name" class="text-center mt-3"></h5>
-          <hr>
+          <h5 id="name" class="text-center mt-4"></h5>
+          <hr class="my-2">
           <section class="container__user__informations">
-            <a href="#" id="github-url"><i class="fab fa-github"></i>
+            <a href="#" class="d-block text-center mb-3" id="github-url"><i class="fab fa-github"></i>
               <spam class="username-github"></spam>
             </a>
-            <p>Seguidores: <span id="followers"></span> Seguindo: <span id="following"></span></p>
-            <p>Top3 Linguagens de programacao:</p>
-            <div id="programming-language"></div>
+            <p class="ms-3 my-1 small">Seguindo: <span id="following"></span></p>
+            <p class="ms-3 mb-3 small">Seguidores: <span id="followers"></span></p>
+            <hr>
+            <p class="my-3"><strong>Linguagens mais usadas</strong></p>
+            <div id="programming-language" class="my-3"></div>
           </section>
+          <hr class="my-2">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-dark my-4 px-5 py-3 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Anotações
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Anotações</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <section id="notes" class="m-2">
+                      <div class="container-note m-2">
+                        <div class="m-2">
+                          <h5>Nota 1</h5>
+                          <hr class="m-0">
+                          <div id="note-1" class="note m-2"></div>
+                        </div>
+                      </div>
+                    </section>
+                    <div class="d-flex flex-column justify-content-center align-items-center m-3">
+                      <button id="new" class="btn btn-success shadow-sm rounded-circle">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="col-sm-12 col-lg-6 my-3">
@@ -57,16 +100,18 @@
             <p>Insira a mensagem do dia aqui</p>
             <div class="d-flex">
               <textarea id="day-message" placeholder="Mensagem do dia" class="text-area-no-resize"></textarea>
-              <button id="day-message-button" class="btn btn-dark message-button-size"><i class="fas fa-arrow-down"></i></button>
+              <button id="day-message-button" class="btn btn-dark message-button-size"><i
+                  class="fas fa-arrow-down"></i></button>
             </div>
           </div>
         </section>
-        <section class="container__day__informations__content mt-3">
-          <section id="day-message-result">        
-          <section id="day-alarm-section" class="py-3">
-            <button id="save-agenda" class='btn btn-success' disabled>Salvar Alarmes</button>
-            <button id="delete-agenda" class='btn btn-dark' >Excluir alarmes</button>
-            <div class="my-alarms d-flex pt-3"></div>
+        <section class="container mt-3 tryber__container">
+          <section class="my-4" id="day-message-result">
+          </section>
+          <section id="day-alarm-section" class="mb-4">
+            <button id="save-agenda" class='btn btn-success mx-2' disabled>Salvar Alarmes</button>
+            <button id="delete-agenda" class='btn btn-dark mx-2'>Excluir alarmes</button>
+            <div class="my-alarms d-flex my-3"></div>
           </section>
         </section>
       </section>
@@ -81,11 +126,11 @@
             <section class="mt-2">
               <input type="text" id="texto-tarefa">
             </section>
-            <div class="row">
+            <div class="d-flex flex-column">
               <section class="col-sm-8 col-lg-12" id="list">
-                <ol id="lista-tarefas"></ol>
+                <ol class="lista-tarefas" id="lista-tarefas"></ol>
               </section>
-              <section class="d-flex col-sm-2 col-lg-12 buttons justify-content-evenly">
+              <section class="d-flex buttons justify-content-evenly">
                 <button class="button btn btn-success" id="criar-tarefa"><i class="fas fa-plus"></i></button>
                 <button class="button btn btn-dark" id="mover-cima"><i class="fas fa-chevron-up"></i></button>
                 <button class="button btn btn-dark" id="mover-baixo"><i class="fas fa-chevron-down"></i></button>
@@ -111,16 +156,16 @@
                 <span>Pausa</span>
                 <h5 class="display-break"></h5>
                 <div class="buttons-break">
-                  <button class="btn btn-dark up-break"><i class="fas fa-chevron-up"></i></button>
-                  <button class="btn btn-dark down-break"><i class="fas fa-chevron-down"></i></button>
+                  <button class="btn btn-dark up-break my-1"><i class="fas fa-chevron-up"></i></button>
+                  <button class="btn btn-dark down-break my-1"><i class="fas fa-chevron-down"></i></button>
                 </div>
               </div>
               <div class="study-time mx-3">
                 <span>Estudo</span>
                 <h5 class="display-study"></h5>
                 <div class="buttons-study">
-                  <button class="btn btn-dark up-study"><i class="fas fa-chevron-up"></i></button>
-                  <button class="btn btn-dark down-study"> <i class="fas fa-chevron-down"></i> </button>
+                  <button class="btn btn-dark up-study my-1"><i class="fas fa-chevron-up"></i></button>
+                  <button class="btn btn-dark down-study my-1"> <i class="fas fa-chevron-down"></i> </button>
                 </div>
               </div>
             </div>
@@ -146,6 +191,14 @@
   <script src="../src/js/pomodoro.js"></script>
   <!-- script para alarmes -->
   <script src="../src/js/alarmes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+  <script src="../src/js/notes.js"></script>
+  </body>
+  
+  </html>
+
 </body>
 
 </html>
