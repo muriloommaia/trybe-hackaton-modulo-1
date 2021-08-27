@@ -20,9 +20,7 @@ const createNewNote = () => {
 };
 
 ClassicEditor
-  .create(document.querySelector('#note-1'), {
-    toolbar: ['bold', 'italic', 'link', 'blockQuote', 'undo', 'redo', 'numberedList', 'bulletedList']
-  })
+  .create(document.querySelector('#note-1'))
   .catch(error => {
     console.error(error);
   });
@@ -32,9 +30,7 @@ const newNoteButton = document.querySelector('#new');
 newNoteButton.addEventListener('click', () => {
   createNewNote();
   ClassicEditor
-    .create(document.querySelector(`#note-${numberOfNotes}`), {
-      toolbar: ['bold', 'italic', 'link', 'blockQuote', 'undo', 'redo', 'numberedList', 'bulletedList']
-    })
+    .create(document.querySelector(`#note-${numberOfNotes}`))
     .catch(error => {
       console.error(error);
     });
