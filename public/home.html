@@ -57,10 +57,17 @@
             </div>
           </div>
         </section>
-        <section class="container__day__informations__content tryber__container mt-3">
+        <!-- <section class="container__day__informations__content tryber__container mt-3"> -->
+        <!-- sessão dedicada as atividades do dia -->
+        <section class="container__day__informations__content mt-3">
           <section id="day-message-result">
           </section>
+          <!-- sessão dedicada aos alarmes -->
+          
           <section id="day-alarm-section">
+            <button id="save-agenda" class='btn btn-success' disabled>Salvar Alarmes</button>
+            <button id="delete-agenda" class='btn btn-dark' disabled>Excluir alarmes</button>
+            <div class="my-alarms d-flex"></div>
           </section>
         </section>
       </section>
@@ -141,6 +148,8 @@
   <script src="../src/js/todoList.js"></script>
   <!-- script do pomodoro -->
   <script src="../src/js/pomodoro.js"></script>
+  <!-- script para alarmes -->
+  <script src="../src/js/alarmes.js"></script>
 </body>
 
 </html>
