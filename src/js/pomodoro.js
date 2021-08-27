@@ -135,7 +135,7 @@ const iniciaRelogio = () => {
 }
 divDisplay.addEventListener('click', () => {
   if (timerOn) {
-    displayTime = 2;
+    displayTime = 0;
   } else {
     onBreak = !onBreak;
     if (onBreak) {
