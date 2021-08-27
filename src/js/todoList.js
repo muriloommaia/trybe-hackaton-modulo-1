@@ -8,6 +8,10 @@ function atualizaLista() {
 }
 
 const saveTasks = () => {
+//<<<<<<< fernando-nascimento-oliveira
+  //localStorage.removeItem('listaSalva');
+//=======
+//>>>>>>> main
   listTarefa = document.getElementById('lista-tarefas');
   localStorage.setItem('listaSalva', listTarefa.innerHTML);
 };
@@ -41,6 +45,13 @@ buttonTarefa.addEventListener('click', () => {
   saveTasks();
 });
 
+// Ao clicar em enter o botão tarefa é acionado
+document.addEventListener("keypress", (event) => {
+  if(event.key === 'Enter') {
+    buttonTarefa.click();
+  }
+});
+
 // Marcando tarefa como completa
 listTarefa.addEventListener('dblclick', (event) => {
   atualizaLista();
@@ -61,11 +72,9 @@ const removeFinalizados = document.getElementById('remover-finalizados');
 
 removeFinalizados.addEventListener('click', () => {
   const completedItens = document.querySelectorAll('.completed');
-
   completedItens.forEach((element) => {
     element.parentNode.removeChild(element);
   });
-
   saveTasks();
 });
 
@@ -77,11 +86,9 @@ buttonMoverCima.addEventListener('click', () => {
   const selected = document.querySelector('.selected');
   const list = document.querySelector('ol');
   const li = document.querySelectorAll('li');
-
   if (selected !== null && selected !== li[0]) {
     list.insertBefore(selected, selected.previousSibling);
   }
-
   saveTasks();
 });
 
@@ -92,7 +99,6 @@ buttonMoverBaixo.addEventListener('click', () => {
   if (selected !== null && selected !== li[li.length - 1]) {
     list.insertBefore(selected, selected.nextSibling.nextSibling);
   }
-
   saveTasks();
 });
 
@@ -101,14 +107,12 @@ const buttonRemoverSelecionado = document.querySelector('#remover-selecionado');
 
 buttonRemoverSelecionado.addEventListener('click', () => {
   const selected = document.querySelector('.selected');
-
   selected.parentNode.removeChild(selected);
-
   saveTasks();
 });
 
-window.onload = () => {
+const iniciaLista = () => {
   if (localStorage.listaSalva) {
     listTarefa.innerHTML = `${localStorage.getItem('listaSalva')}`;
   }
-};
+}

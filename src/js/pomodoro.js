@@ -165,6 +165,7 @@ const resetTempo = () => {
 buttonReset.addEventListener('click', resetTempo);
 window.onload = () => {
   iniciaRelogio();
+  
 }
 
 // module.exports = {
