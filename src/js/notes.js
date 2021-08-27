@@ -27,7 +27,7 @@ ClassicEditor
 
 const newNoteButton = document.querySelector('#new');
 
-newNoteButton.addEventListener('click', () => {
+const criaNovaNota = () => {
   createNewNote();
   ClassicEditor
     .create(document.querySelector(`#note-${numberOfNotes}`))
@@ -35,6 +35,11 @@ newNoteButton.addEventListener('click', () => {
       console.error(error);
     });
   numberOfNotes++;
-  saveNotesInLocalStorage();
+  // saveNotesInLocalStorage();
   window.scrollTo(0, document.body.scrollHeight);
+}
+
+
+newNoteButton.addEventListener('click', () => {
+  criaNovaNota();
 });

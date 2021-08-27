@@ -115,4 +115,5 @@ window.onload = () => {
   }
   iniciaRelogio();
   iniciaLista();
+  saveNotes();
 }

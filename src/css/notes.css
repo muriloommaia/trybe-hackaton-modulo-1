@@ -17,3 +17,11 @@
   height: 50px;
   width: 50px;
 }
+
+#delete {
+  position: fixed;
+  top: 120px;
+  right: 50px;
+  height: 50px;
+  width: 50px;
+}
