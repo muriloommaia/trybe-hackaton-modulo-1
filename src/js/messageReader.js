@@ -32,7 +32,6 @@ const displayMessageResult = (result) => {
 	});
 }
 
-
 const sendMessageButton = document.getElementById('day-message-button');
 
 sendMessageButton.addEventListener('click', () => {

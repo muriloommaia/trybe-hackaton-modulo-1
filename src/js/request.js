@@ -1,7 +1,12 @@
+
+const getRepository = (result) => {
+
+}
+
 const searchUser = (name) => {
   if (!name) return false;
   let endpoint = `users/${name}`;
-  if (/^[a-z0-9.]+@[a-z0-9]+\.[a-z]/g.test(name)) endpoint =`search/users?q=${name}`; // if (email) 
+  if (/^[a-z0-9.]+@[a-z0-9]+\.[a-z]/g.test(name)) endpoint = `search/users?q=${name}`; // if (email) 
   return new Promise(async (resolve, reject) => {
     try {
       const result = await (await fetch(`https://api.github.com/${endpoint}`)).json();
@@ -12,6 +17,27 @@ const searchUser = (name) => {
     }
   });
 }
+
+const putInformation = ({ avatar_url, login, html_url, name }) => {
+  const userAvatar = document.querySelectorAll('.profile-photo');
+  userAvatar[0].src = avatar_url;
+  userAvatar[1].src = avatar_url;
+  const nameInformation = document.querySelector('#name');
+  nameInformation.innerText = `Olá ${name}!`;
+  const username = document.querySelector('.username-github');
+  username.innerText = `   ${login}`;
+  const userUrl = document.querySelector('#github-url');
+  userUrl.href = html_url;
+}
+
+const userInformation = async () => {
+  const userName = localStorage.user;
+  if (!userName) window.location.href = '../public/index.html';
+  const result = await searchUser(userName);
+  putInformation(result);
+  return result;
+}
+userInformation();
 
 `{
     "login": "pauloeduardods",
