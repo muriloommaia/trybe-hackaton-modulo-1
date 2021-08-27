@@ -26,7 +26,7 @@
         <a href="https://app.betrybe.com/"><img src="../src/images/logo-trybe.png" class="logo__trybe" alt="Trybe"></a>
       </section>
       <section class="container__user d-flex justify-content-center align-items-center">
-        <button class="button-exit btn btn-outline-dark">Sair</button>
+        <button id="button-exit" class="btn btn-outline-dark">Sair</button>
         <img class="profile-photo user__avatar ms-4" alt="User">
       </section>
     </section>
@@ -42,6 +42,9 @@
             <a href="#" id="github-url"><i class="fab fa-github"></i>
               <spam class="username-github"></spam>
             </a>
+            <p>Seguidores: <span id="followers"></span> Seguindo: <span id="following"></span></p>
+            <p>Top3 Linguagens de programacao:</p>
+            <div id="programming-language"></div>
           </section>
         </div>
       </section>
@@ -138,10 +141,8 @@
   <!-- Font Awesome Script -->
   <script src="https://kit.fontawesome.com/9ad24ce411.js" crossorigin="anonymous"></script>
   <!-- Local script -->
-  <script src="../src/js/messageReader.js"></script>
+  <script src="../src/js/dayMessageReader.js"></script>
   <script src="../src/js/request.js"></script>
-  <!-- <script src="../src/js/request.js"></script> -->
-  <script src="../src/js/userInformation.js"></script>
   <!-- <script src="../src/js/script.js"></script> -->
   <script src="../src/js/todoList.js"></script>
   <!-- script do pomodoro -->
