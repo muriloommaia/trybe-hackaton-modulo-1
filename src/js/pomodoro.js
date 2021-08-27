@@ -163,9 +163,6 @@ const resetTempo = () => {
   iconPause();
 }
 buttonReset.addEventListener('click', resetTempo);
-window.onload = () => {
-  iniciaRelogio();
-}
 
 // module.exports = {
 //   displayBreak,
