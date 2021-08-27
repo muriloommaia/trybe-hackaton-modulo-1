@@ -2,18 +2,43 @@ const sectionAlarmes = document.querySelector('.my-alarms');
 const sectionAgenda = document.getElementById('day-message-result');
 const buttonSave = document.getElementById('save-agenda');
 const buttonDelete = document.getElementById('delete-agenda');
+// Array de horarios para despertar, é iniciado com zero, setado novamente em functionAlarms, mas no carregamento da pagina, caso houver localStorage.horarios, ele recebe o valor antigo;
+let horarios = [];
 
-
+// Função feita para retornar o horario atual no formato hh:mm
+const getTimeActual = () => {
+  const data = new Date();
+  const hora = data.getHours() < 10 ? `0${data.getHours()}` : data.getHours();
+  const minutos = data.getMinutes() < 10 ? `0${data.getMinutes()}` : data.getMinutes();
+  return `${hora}:${minutos}`
+}
+// Função utilizada para remover os intervalos criados pelo setInterval 
+const removeIntervals = (horarios) => {
+  horarios.forEach((intervalo) => {
+    clearInterval(localStorage[intervalo]);
+    localStorage.removeItem(intervalo);
+  })
+};
+// Função responsavel por criar os timers de horario e tocar um som quando der certo
 const makeAlarms = (horarios) => {
-  horarios.forEach((horaAlarme) => {
-
+  horarios.forEach(async (horaAlarme) => {
+    const dataAlarme = horaAlarme;
+    let horaAtual = () => getTimeActual();
+    const idIntervalo = setInterval(() => {
+      // console.log(`${horaAtual()} === ${dataAlarme}`)
+      if (horaAtual() === dataAlarme) {
+        document.getElementById('alarme').play();
+      }
+    }, 1000);
+    localStorage[dataAlarme] = idIntervalo;
+    // console.log('teste' + horaAlarme)
   })
 }
 
 const boxAlarmConstructor = (id) => {
   const div = document.createElement('div');
   div.className = 'box-horario'
-  div.id = id;
+  // div.id = id;
   div.innerText = id;
   return div;
 }
@@ -21,16 +46,15 @@ const boxAlarmConstructor = (id) => {
 const functionAlarm = (event) => {
   sectionAlarmes.innerText = "";
   const allCheckeds = document.querySelectorAll('input.agenda:checked');
-  let horarios = [];
+  removeIntervals(horarios);
+  horarios = [];
   buttonSave.disabled = true;
-  buttonDelete.disabled = true;
-  if(allCheckeds.length >= 1){
+  if (allCheckeds.length >= 1) {
     buttonSave.disabled = false;
-    buttonDelete.disabled = false;
     allCheckeds.forEach(e => {
       e.checked;
       const hora = e.nextSibling.innerText.split(' ');
-      horarios = horarios.concat(hora[0].replace('h',':'))
+      horarios = horarios.concat(hora[0].replace('h', ':'))
     })
   }
   sectionAlarmes.innerHTML = '';
@@ -57,17 +81,25 @@ buttonSave.addEventListener('click', () => {
 })
 // escutador de evento para eliminar os horarios
 buttonDelete.addEventListener('click', () => {
+  removeIntervals(horarios);
   localStorage.removeItem('horarios');
   sectionAlarmes.innerHTML = '';
-  document.querySelectorAll('input.agenda:checked').forEach((e) => {e.checked = false})
+  const checkeds = document.querySelectorAll('input.agenda:checked');
+  if(checkeds) {
+    checkeds.forEach((e) => { e.checked = false })
+  }
 });
 window.onload = () => {
-  if(localStorage['agenda']) {
+  if (localStorage['agenda']) {
     sectionAgenda.innerHTML = localStorage['agenda'];
   }
-  functionAlarm();
-  if(localStorage['horarios']) {
+  // functionAlarm();
+  if (localStorage['horarios']) {
     sectionAlarmes.innerHTML = localStorage['horarios'];
+    horarios = sectionAlarmes.innerHTML.match(/[\d]{2}:[\d]{2}/g);
+    removeIntervals(horarios);
+    makeAlarms(horarios);
   }
   iniciaRelogio();
+  iniciaLista();
 }
