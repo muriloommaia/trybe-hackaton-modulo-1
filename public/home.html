@@ -16,6 +16,8 @@
   <!-- Pomodoro css -->
   <link rel="stylesheet" href="../src/css/pomodoroClock.css">
 
+  <link rel="stylesheet" href="../src/css/notes.css">
+
   <title>Document</title>
 </head>
 
@@ -47,8 +49,50 @@
             <p>Top3 Linguagens de programacao:</p>
             <div id="programming-language"></div>
           </section>
+
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Anotações
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Anotações</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <section id="notes" class="m-2">
+                      <div class="container-note m-2">
+                        <div class="m-2">
+                          <h5>Nota 1</h5>
+                          <hr class="m-0">
+                          <div id="note-1" class="note m-2"></div>
+                        </div>
+                      </div>
+                    </section>
+                    <div class="d-flex flex-column justify-content-center align-items-center m-3">
+                      <button id="new" class="btn btn-dark shadow-sm rounded-circle">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+
       <section class="col-sm-12 col-lg-6 my-3">
         <section class="user-container">
           <div class="m-3">
@@ -62,13 +106,13 @@
             </div>
           </div>
         </section>
-        <section class="container__day__informations__content mt-3">
-          <section id="day-message-result">
+        <section class="container mt-3 tryber__container">
+          <section class="my-4" id="day-message-result">
           </section>
-          <section id="day-alarm-section" class="py-3">
+          <section id="day-alarm-section" class="mb-4">
             <button id="save-agenda" class='btn btn-success' disabled>Salvar Alarmes</button>
             <button id="delete-agenda" class='btn btn-dark'>Excluir alarmes</button>
-            <div class="my-alarms d-flex pt-3"></div>
+            <div class="my-alarms d-flex"></div>
           </section>
         </section>
       </section>
@@ -148,6 +192,14 @@
   <script src="../src/js/pomodoro.js"></script>
   <!-- script para alarmes -->
   <script src="../src/js/alarmes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+  <script src="../src/js/notes.js"></script>
+  </body>
+  
+  </html>
+
 </body>
 
 </html>

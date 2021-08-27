@@ -8,22 +8,19 @@ const messageReader = (string) => {
 } 
 
 const createCheckbox = (text, time) => {
-	const newDiv = document.createElement('div');
 	const newCheckbox = document.createElement('label');
 	const checkbox = document.createElement('input');
 	const newSpanTime = document.createElement('span');
 	const checkboxInput = document.createElement('span');
 	newSpanTime.style.display = 'none';
-	newDiv.className = 'div-horarios';
 	newSpanTime.innerText = time;
 	checkbox.type = 'checkbox';
-	checkbox.className = 'agenda';
-	checkboxInput.innerText = `${newSpanTime.innerText.slice(0,5)} ${text}`;
-	newDiv.appendChild(newCheckbox);
+	checkbox.className = 'agenda'
+	checkboxInput.innerText = text;
 	newCheckbox.appendChild(checkbox);
 	newCheckbox.appendChild(newSpanTime);
 	newCheckbox.appendChild(checkboxInput);
-	return newDiv;
+	return newCheckbox;
 }
 
 const displayMessageResult = (result) => {
