@@ -100,7 +100,7 @@ const controlTime = () => {
           document.getElementById('alarme').play();
           onBreackVariavel = true;
           onBreak = true;
-          displayTime = displayBreak;
+          displayTime = displayBreak; 
           mudancaTurno();
           return innerTextDisplay(tagDisplayAtual, displayTime);
         } else if (displayTime <= 0 && onBreackVariavel) {
