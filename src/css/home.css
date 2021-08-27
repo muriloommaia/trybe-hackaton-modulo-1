@@ -70,6 +70,11 @@ hr {
 .agenda {
   margin-right: 6px;
 }
+
+.lista-tarefas {
+  height: 150px;
+  overflow: scroll;
+}
 /* 
 .day__information {
   width: 55%;
