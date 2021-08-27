@@ -31,14 +31,17 @@ const searchInfo = (url) => {
   });
 }
 
-const displayUserInformation = ({ avatar_url, login, html_url, name }) => {
+const displayUserInformation = ({ avatar_url, name, login, html_url, following, followers }) => {
   const userAvatar = document.querySelectorAll('.profile-photo');
-  userAvatar[0].src = avatar_url;
-  userAvatar[1].src = avatar_url;
+  userAvatar.forEach((user) => user.src = avatar_url);
   const nameInformation = document.querySelector('#name');
   nameInformation.innerText = `Olá ${name}!`;
   const username = document.querySelector('.username-github');
   username.innerText = `   ${login}`;
+  const userfollowing = document.getElementById('following');
+  userfollowing.innerHTML = following;
+  const userfloowers = document.getElementById('followers'); 
+  userfloowers.innerHTML = followers.length;
   const userUrl = document.querySelector('#github-url');
   userUrl.href = html_url;
 }
@@ -48,12 +51,21 @@ const getUserInfo = async () => {
   if (!userName) window.location.href = '../public/index.html';
   const result = await searchUser(userName);
   const followers = await searchInfo(result.followers_url); // get followers count
-  const repo = await searchInfo(result.repos_url); // get repos
-  const repoLanguages = await Promise.all(repo.map(async ({ name, description, languages_url, language}) => {
+  const repos = await searchInfo(result.repos_url); // get repos
+  const reposInfo = await Promise.all(repos.map(async ({ name, description, languages_url, language, fork}) => {
     const languages = await searchInfo(languages_url);
-    return { name, description, language, languages };
+    return { name, description, language, languages, fork };
   })); //get repo languages
-  displayUserInformation(result);
+  const languagesUsed = reposInfo.reduce((acc, currentLanguages) => {
+    if (currentLanguages.fork) return acc;
+    Object.keys(currentLanguages.languages).forEach((currentLanguage) => {
+      if (!acc[currentLanguage]) acc[currentLanguage] = 0;
+      acc[currentLanguage] = parseInt(acc[currentLanguage], 10) + parseInt(currentLanguages.languages[currentLanguage], 10);
+    });
+    return acc;
+  }, {});
+  console.log({ ...result, followers, repos, languagesUsed, reposInfo })
+  displayUserInformation({ ...result, followers, repos, languagesUsed, reposInfo });
 }
 getUserInfo();
 `{
