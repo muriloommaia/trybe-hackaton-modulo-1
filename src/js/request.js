@@ -31,6 +31,17 @@ const searchInfo = (url) => {
   });
 }
 
+const languageUsed = (languages, total, language) => {
+  const result = Object.keys(languages).reduce((acc, currentLanguage) => ([
+    ...acc,
+    { [currentLanguage]: (languages[currentLanguage] / total * 100).toFixed(2) }]), []);
+  if (language) {
+    return result[result.indexOf(language)];
+  }
+  return result.sort((a, b) => Object.values(b)[0] - Object.values(a)[0]);
+
+}
+
 const displayUserInformation = ({ avatar_url, name, login, html_url, following, followers, languagesUsed, languagesUsedTotal }) => {
   const userAvatar = document.querySelectorAll('.profile-photo');
   userAvatar.forEach((user) => user.src = avatar_url);
@@ -45,7 +56,7 @@ const displayUserInformation = ({ avatar_url, name, login, html_url, following, 
   const userUrl = document.querySelector('#github-url');
   userUrl.href = html_url;
   const languageContainer = document.getElementById('programming-language');
-  console.log(Object.entries(languagesUsed).sort(([f,a], [g,b]) => a - b)); //show top3 
+  console.log(languageUsed(languagesUsed, languagesUsedTotal)) //show top3 
 }
 
 const getUserInfo = async () => {
@@ -70,6 +81,7 @@ const getUserInfo = async () => {
   displayUserInformation({ avatar_url, name, login, html_url, following, followers, languagesUsed, reposInfo, languagesUsedTotal });
 }
 getUserInfo();
+
 `{
     "login": "pauloeduardods",
     "id": 69918154,
