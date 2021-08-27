@@ -16,12 +16,6 @@
   user-select: none;
 }
 
-/* .div-display:hover {
-  background: rgb(40, 167, 69);
-  background: linear-gradient(144deg, rgba(40, 167, 69, 1) 0%, rgba(218, 255, 226, 0.8679320946168364) 100%);
-  cursor: pointer;
-} */
-
 .hover-study {
   background: rgb(40, 167, 69);
   background: linear-gradient(144deg, rgba(40, 167, 69, 1) 0%, rgba(218, 255, 226, 0.8679320946168364) 100%);
@@ -36,4 +30,10 @@
 
 .btn-success {
   align-self: center;
+}
+
+.box-horario {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
 }

@@ -8,7 +8,6 @@ function atualizaLista() {
 }
 
 const saveTasks = () => {
-  localStorage.clear();
   listTarefa = document.getElementById('lista-tarefas');
   localStorage.setItem('listaSalva', listTarefa.innerHTML);
 };
