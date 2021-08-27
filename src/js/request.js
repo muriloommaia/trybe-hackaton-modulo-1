@@ -1,3 +1,9 @@
+const exit = document.getElementById('button-exit');
+
+exit.addEventListener('click', () => {
+  localStorage.removeItem('user');
+  window.location.href = '../public/index.html';
+});
 
 const getRepository = (result) => {
 
