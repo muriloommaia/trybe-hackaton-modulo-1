@@ -31,10 +31,11 @@
       </section>
     </section>
   </header>
-  <main class="d-flex justify-content-center">
-    <div class="main__container d-flex mt-4">
-      <section class="user__information tryber__container">
-        <div class="d-flex flex-column align-items-center m-3">
+  <main class="container">
+    <div class="row">
+      <section class="col-sm-12 col-lg-3 user-container my-3">
+        <!-- user__information tryber__container -->
+        <div class="align-items-center">
           <img class="profile-photo user__information__avatar mt-3" alt="Avatar do Usuário">
           <h5 id="name" class="text-center mt-3"></h5>
           <hr>
@@ -48,25 +49,21 @@
           </section>
         </div>
       </section>
-      <section class="day__information ms-4">
-        <section class="container__day__informations__header tryber__container">
+      <section class="col-sm-12 col-lg-6 my-3">
+        <section class="user-container">
           <div class="m-3">
             <h3 class="day__information__title">Informações do dia</h3>
             <hr class="">
             <p>Insira a mensagem do dia aqui</p>
             <div class="d-flex">
-              <textarea id="day-message" placeholder="Mensagem do dia"></textarea>
-              <button id="day-message-button" class="btn btn-dark"><i class="fas fa-arrow-down"></i></button>
+              <textarea id="day-message" placeholder="Mensagem do dia" class="text-area-no-resize"></textarea>
+              <button id="day-message-button" class="btn btn-dark message-button-size"><i class="fas fa-arrow-down"></i></button>
             </div>
           </div>
         </section>
-        <!-- <section class="container__day__informations__content tryber__container mt-3"> -->
-        <!-- sessão dedicada as atividades do dia -->
         <section class="container__day__informations__content mt-3">
           <section id="day-message-result">
-          </section>
-          <!-- sessão dedicada aos alarmes -->
-          
+          </section>          
           <section id="day-alarm-section">
             <button id="save-agenda" class='btn btn-success' disabled>Salvar Alarmes</button>
             <button id="delete-agenda" class='btn btn-dark' >Excluir alarmes</button>
@@ -74,8 +71,9 @@
           </section>
         </section>
       </section>
-      <section class="user__utilities ms-4">
-        <section class="user__todo__list tryber__container">
+      <section class="col-sm-12 col-lg-3 my-3">
+        <!-- user__utilities -->
+        <section class="user-container">
           <div class="d-flex flex-column justify-content-center align-items-center m-3">
             <div class="todo-header">
               <h5>Sua Lista de Tarefas</h5>
@@ -84,23 +82,23 @@
             <section class="mt-2">
               <input type="text" id="texto-tarefa">
             </section>
-            <div class="d-flex mt-2">
-              <section id="list">
+            <div class="row">
+              <section class="col-sm-8 col-lg-12" id="list">
                 <ol id="lista-tarefas"></ol>
               </section>
-              <section class="buttons d-flex flex-column ms-2">
+              <section class="d-flex col-sm-2 col-lg-12 buttons justify-content-evenly">
                 <button class="button btn btn-success" id="criar-tarefa"><i class="fas fa-plus"></i></button>
-                <button class="button btn btn-dark mt-1" id="mover-cima"><i class="fas fa-chevron-up"></i></button>
-                <button class="button btn btn-dark mt-1" id="mover-baixo"><i class="fas fa-chevron-down"></i></button>
-                <button class="button btn btn-dark mt-1" id="apaga-tudo"><i class="fas fa-trash-alt"></i></button>
-                <button class="button btn btn-dark mt-1" id="remover-finalizados"><i
+                <button class="button btn btn-dark" id="mover-cima"><i class="fas fa-chevron-up"></i></button>
+                <button class="button btn btn-dark" id="mover-baixo"><i class="fas fa-chevron-down"></i></button>
+                <button class="button btn btn-dark" id="apaga-tudo"><i class="fas fa-trash-alt"></i></button>
+                <button class="button btn btn-dark" id="remover-finalizados"><i
                     class="fas fa-remove-format"></i></button>
-                <button class="button btn btn-dark mt-1" id="remover-selecionado"><i class="fas fa-eraser"></i></button>
+                <button class="button btn btn-dark" id="remover-selecionado"><i class="fas fa-eraser"></i></button>
               </section>
             </div>
           </div>
         </section>
-        <section class="user__pomodoro mt-3 tryber__container">
+        <section class="user__pomodoro mt-3 user-container">
           <div class="m-3 mb-0">
             <h5 class="mt-1">Pomodoro</h5>
           <hr>
